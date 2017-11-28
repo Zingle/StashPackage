@@ -39,5 +39,5 @@ but before your project service providers.
 Finally install the vendor assets:
 
 ~~~ bash
-$ php artisan vendor:publish --provider="ZingleCom\Stash\StashServiceProvider::class"
+$ php artisan vendor:publish --provider="ZingleCom\Stash\StashServiceProvider"
 ~~~
