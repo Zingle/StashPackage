@@ -8,7 +8,7 @@ Provides basic stash bindings and helpers into Laravel.
 Install the base package with composer.
 
 ~~~ bash
-$ composer install zingle-com/stash-package
+$ composer require zingle-com/stash-package
 ~~~
 
 Add service provider to your providers after the Illuminate providers, 
