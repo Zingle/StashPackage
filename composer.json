@@ -1,0 +1,27 @@
+{
+  "name": "zingle-com/stash-package",
+  "description": "Stash package for Laravel",
+  "type": "laravel-package",
+  "license": "MIT",
+  "authors": [{
+    "name": "Zingle",
+    "homepage": "https://github.com/Zingle/StashPackage"
+  },{
+    "name": "Zachary Quintana",
+    "homepage": "https://github.com/zquintana"
+  }],
+  "require": {
+    "php": "~7.0|~7.1",
+    "tedivm/stash-bundle": "0.5.*"
+  },
+  "require-dev": {
+    "illuminate/container": "5.1.x|5.2.x|5.3.x|5.4.x|5.5.x",
+    "illuminate/support": "5.1.x|5.2.x|5.3.x|5.4.x|5.5.x"
+  },
+  "autoload": {
+    "psr-4": {
+      "ZingleCom\\Stash\\Tests\\": "tests",
+      "ZingleCom\\Stash\\": "src"
+    }
+  }
+}
