@@ -13,23 +13,22 @@ return [
      */
     'tracking_values' => false,
 
-
     'caches' => [
         'default' => [
             'drivers'  => [ 'FileSystem' ],
             'inMemory' => true,
-        ]
+        ],
     ],
 
     'drivers' => [
         'FileSystem' => [
             'dirSplit'          => 2,
-            'path'              => '%kernel.cache_dir%/stash',
+            'path'              => storage_path('stash'),
             'filePermissions'   => 0660,
             'dirPermissions'    => 0770,
             'memKeyLimit'       => 200,
             'keyHashFunction'   => 'md5',
-            'encoder'           => 'Native'
+            'encoder'           => 'Native',
         ],
         'Redis' => [
             'password' => null,
@@ -38,8 +37,17 @@ return [
                 [
                     'server' => '127.0.0.1',
                     'port'   => '6379',
-                ]
-            ]
+                ],
+            ],
+        ],
+        'Predis' => [
+            'servers'  => [
+                [
+                    'scheme' => 'tcp',
+                    'server' => '127.0.0.1',
+                    'port'   => '6379',
+                ],
+            ],
         ],
         'Memcache' => [
             'compression' => false,
@@ -49,7 +57,7 @@ return [
                     'server' => '127.0.0.1',
                     'port'   => '11211',
                     'weight' => null,
-                ]
+                ],
             ],
         ],
         'SQLite' => [
@@ -59,11 +67,11 @@ return [
             'nesting'           => 0,
             'subhandler'        => 'PDO',
             'version'           => null,
-            'path'              => '%kernel.cache_dir%/stash',
+            'path'              => storage_path('stash'),
         ],
         'Apc' => [
             'ttl'               => 300,
             'namespace'         => null,
         ],
-    ]
+    ],
 ];

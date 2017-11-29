@@ -4,7 +4,9 @@ namespace ZingleCom\Stash;
 
 use Illuminate\Container\Container;
 use Illuminate\Support\ServiceProvider;
+use Stash\DriverList;
 use Stash\Interfaces\PoolInterface;
+use ZingleCom\Stash\Driver\Predis;
 
 /**
  * Class StashServiceProvider
@@ -29,7 +31,20 @@ class StashServiceProvider extends ServiceProvider
         $configPath = __DIR__.'/../config/stash.php';
         $this->mergeConfigFrom($configPath, 'stash');
 
-        $this->registerCacheManager();
+        $this
+            ->registerAdditionalDrivers()
+            ->registerCacheManager()
+        ;
+    }
+
+    /**
+     * @return $this
+     */
+    private function registerAdditionalDrivers()
+    {
+        DriverList::registerDriver('Predis', Predis::class);
+
+        return $this;
     }
 
     /**

@@ -16,7 +16,8 @@
   },
   "require-dev": {
     "illuminate/container": "5.1.x|5.2.x|5.3.x|5.4.x|5.5.x",
-    "illuminate/support": "5.1.x|5.2.x|5.3.x|5.4.x|5.5.x"
+    "illuminate/support": "5.1.x|5.2.x|5.3.x|5.4.x|5.5.x",
+    "predis/predis": "^1.1"
   },
   "autoload": {
     "psr-4": {
