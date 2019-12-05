@@ -11,8 +11,8 @@
     "homepage": "https://github.com/zquintana"
   }],
   "require": {
-    "php": "~7.0|~7.1",
-    "tedivm/stash-bundle": "0.5.*",
+    "php": ">=7.1",
+    "tedivm/stash-bundle": "^0.7",
     "predis/predis": "^1.1"
   },
   "require-dev": {
