@@ -60,7 +60,7 @@ class Predis extends AbstractDriver
                 ], $server);
 
                 if ('tcp' === $server['scheme']) {
-                    $servers[] = sprintf('tcp://%s:%s', $server['host'], $server['port']) . ($server['password'] ? sprintf('?password=%s', $server['password']) : null);
+                    $servers[] = sprintf('tcp://%s:%s', $server['host'], $server['port']) . (isset($server['password']) ? sprintf('?password=%s', $server['password']) : null);
                 } elseif ('unix' === $server['scheme']) {
                     $servers[] = sprintf('unix:/%s', $server['path']);
                 } else {
